@@ -1,7 +1,3 @@
-import urllib.request
-import os
-import zipfile
-import sys
 import streamlit as st
 from streamlit import cli as stcli
 import pandas as pd
@@ -11,44 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.api as sm
 
-#Holen der Zip Files von der Webseite des DWD und Unzippen der Dateien
-def load_and_unzip():
-    try:
-        links = []
-        url_test = "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/annual/kl/historical/{}"
-        ending = [line.strip() for line in open("jahreswerte.txt")]
-        print(os.path)
-        for i in ending:
-            url = url_test.format(i)
-            links.append(url)
-        for n in links:
-            if not os.path.isfile(os.path.basename(n)):
-                urllib.request.urlretrieve(n,os.path.basename(n))
-                for m in links:
-                    with zipfile.ZipFile(os.path.basename(m), 'r') as zip_ref:
-                        zip_ref.extractall()
-        print("Success")
-    except:
-        print("Couldn't load data")
-
-#Merging der Text Files
-def merging():
-    keyword = "produkt_klima_jahr"
-    files=[]
-    for x in os.listdir():
-        if keyword in x:
-            files.append(x)
-            # merge text files
-    with open("output_file.txt", "w") as outfile:
-        for filename in files:
-            with open(filename) as infile:
-                contents = infile.read()
-                outfile.write(contents)
-        # delete rows which contains...
 
 def main():
-    load_and_unzip()
-    merging()
     pd.set_option('display.max_colwidth', None)
     df = pd.read_csv(
         r"output_file.txt",
