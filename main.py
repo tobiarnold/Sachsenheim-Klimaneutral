@@ -14,7 +14,7 @@ def main():
         r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/output_file.txt",
         delimiter=";")
     df = df[df.STATIONS_ID != "STATIONS_ID"]
-    df_station = pd.read_csv(r"KL_Jahreswerte_Beschreibung_Stationen.txt", encoding='latin-1', delimiter=";")
+    df_station = pd.read_csv(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/KL_Jahreswerte_Beschreibung_Stationen.txt", encoding='latin-1', delimiter=";")
     df_station.columns = df_station.columns.str.strip()
     df_station = df_station.rename(columns={"Stations_ID": "STATIONS_ID"})
     df_station["STATIONS_ID"] = df_station["STATIONS_ID"].astype(int)
