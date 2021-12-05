@@ -50,7 +50,7 @@ def main():
              "Jahressumme Niederschlagshöhe", "Max. Niederschlagshoehe Jahr","Jahresmittel Max. Lufttemperatur",
              "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
     #print(df.head())
-    st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
+    st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="centered")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     st.markdown("***")
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
