@@ -56,9 +56,10 @@ def main():
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
              Eine überparteiliche Initiative, die erreichen möchte, dass Sachsenheim bis 2035 klimaneutral wird. 
              Wir haben diese Initiative im April 2021 ins Leben gerufen, weil wir davon überzeugt sind, dass große Veränderungen klein und lokal beginnen: 
-             **Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.** \n
+             Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss. \n
              Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
-             Deutschland anzeigen lassen, wählt dazu links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Viel Spass 😀 """)
+             Deutschland anzeigen lassen, wählt dazu links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Insgesamt stehen mehr als 1.100 Stationen zur Verfügung.
+             Viel Spass 😀 """)
     st.markdown("##")
    # st.dataframe(df_station)
    # st.dataframe(df)
@@ -102,23 +103,12 @@ def main():
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
         fig.update_traces(marker_size=8)
         st.plotly_chart(fig)
-    col5, col6 = st.columns(2)
-    with col5:
-        fig = px.bar(df_selection, x="Jahr", y="Max. Niederschlagshoehe Jahr",
-                           color="Max. Niederschlagshoehe Jahr", color_continuous_scale=px.colors.sequential.Blues,
-                           title="<b>maximale Niederschlagshöhe je Jahr in mm</b>")
-        st.plotly_chart(fig)
-    with col6:
-        st.markdown("##")
-        st.markdown("##")
-        st.markdown("##")
-        st.markdown("##")
-        st.markdown("##")
-        link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
-        st.markdown(link1, unsafe_allow_html=True)
-        link2="[Instagram sachsenheim.klimaneutral](https://www.instagram.com/sachsenheim.klimaneutral/)"
-        st.markdown(link2, unsafe_allow_html=True)
-        st.write("Wir würden uns freuen, wenn Ihr unserem Insta Profil folgt und ein Like dalasst.  \n💚💚💚")
+        
+    link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
+    st.markdown(link1, unsafe_allow_html=True)
+    link2="[Instagram sachsenheim.klimaneutral](https://www.instagram.com/sachsenheim.klimaneutral/)"
+    st.markdown(link2, unsafe_allow_html=True)
+    st.write("Wir würden uns freuen, wenn Ihr unserem Insta Profil folgt und ein Like dalasst.  \n💚💚💚")
     st.markdown("***")
     #heatmap
     df_neu = df_selection.pivot("Jahr", "Stations_Id", "Jahresmittel Lufttemperatur")
