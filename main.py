@@ -133,3 +133,6 @@ def main():
     st.write(f)
     st.markdown("***")
     st.text("created with Python by Tobias Arnold, Quelle: Deutscher Wetterdienst")
+        
+if __name__ == "__main__":
+  main()
