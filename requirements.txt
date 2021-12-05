@@ -6,7 +6,7 @@ streamlit
 pandas
 plotly.express 
 Image
-numpy as np
+numpy 
 matplotlib.pyplot
 seaborn 
 statsmodels.api 
