@@ -60,7 +60,7 @@ def main():
      st.markdown("##")
      st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
              Deutschland anzeigen lassen, wählt dazu links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Insgesamt stehen mehr als 1.100 Stationen zur Verfügung.
-             Viel Spass 😀 """)
+             Viel Spass 😀""")
     st.markdown("##")
    # st.dataframe(df_station)
    # st.dataframe(df)
