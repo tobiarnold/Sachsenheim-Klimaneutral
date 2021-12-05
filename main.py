@@ -175,10 +175,3 @@ def main():
     st.write(f)
     st.markdown("***")
     st.text("created with Python by Tobias Arnold, Quelle: Deutscher Wetterdienst")
-
-if __name__ == '__main__':
-    if st._is_running_with_streamlit:
-        main()
-    else:
-        sys.argv = ["streamlit", "run", sys.argv[0]]
-        sys.exit(stcli.main())
