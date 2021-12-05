@@ -12,7 +12,7 @@ def main():
     pd.set_option('display.max_colwidth', None)
     df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file.txt",delimiter=";")
     df = df[df.STATIONS_ID != "STATIONS_ID"]
-    df_station = pd.read_csv(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/KL_Jahreswerte_Beschreibung_Stationen.txt", delimiter=";")
+    df_station = pd.read_csv(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/KL_Jahreswerte_Beschreibung_Stationen.txt", encoding='latin-1', delimiter=";")
     df_station.columns = df_station.columns.str.strip()
     df_station = df_station.rename(columns={"Stations_ID": "STATIONS_ID"})
     df_station["STATIONS_ID"] = df_station["STATIONS_ID"].astype(int)
