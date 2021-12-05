@@ -11,7 +11,7 @@ import statsmodels.api as sm
 def main():
     pd.set_option('display.max_colwidth', None)
     df = pd.read_csv(
-        r"output_file.txt",
+        r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/output_file.txt",
         delimiter=";")
     df = df[df.STATIONS_ID != "STATIONS_ID"]
     df_station = pd.read_csv(r"KL_Jahreswerte_Beschreibung_Stationen.txt", encoding='latin-1', delimiter=";")
