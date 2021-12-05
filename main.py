@@ -6,7 +6,6 @@ import streamlit as st
 from streamlit import cli as stcli
 import pandas as pd
 import plotly.express as px
-from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -96,8 +95,6 @@ def main():
     #print(df.head())
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
-    image = Image.open(r"C:\Users\Tobi\PycharmProjects\Deutscher Wetterdienst\Logo.jpg")
-    st.image(image, width=200)
     st.markdown("***")
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
              Eine überparteiliche Initiative, die erreichen möchte, dass Sachsenheim bis 2035 klimaneutral wird. 
