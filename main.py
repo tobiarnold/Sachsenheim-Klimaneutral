@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.api as sm
 
-
 def main():
     pd.set_option('display.max_colwidth', None)
     df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file.txt",delimiter=";")
