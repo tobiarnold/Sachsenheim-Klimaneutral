@@ -59,7 +59,8 @@ def main():
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
     st.markdown("##")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
-             Deutschland anzeigen lassen, wählt dazu links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. 
+             Deutschland anzeigen lassen, wählt dazu  **links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Achtung bei Zugriff mit mobilen Geräte ist der 
+             Filter standardmäßig ausgeblendet. Der Filter lässt sich mit dem Pfeil oben links einblenden.
              Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Viel Spass 😀""")
     st.markdown("##")
    # st.dataframe(df_station)
