@@ -81,29 +81,28 @@ def main():
     st.write("Die folgenden Diagramme zeigen jeweils die Veränderungen der Temperaturen für die verschiedenen Jahre sowie die Veränderung der Niederschläge.")
     st.write("Die Punkte bei den Diagrammen stellen jeweils die Messwerte in den verschieden Jahren dar, die rote Linie zeigt den Trend auf.")
 
-    col1, col2 = st.columns(2)
-    with col1:
-        fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols",
-                           color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Lufttemperatur je Jahr in Grad Celsius</b>")
-        fig.update_traces(marker_size=8)
-        st.plotly_chart(fig)
-    with col2:
-        fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
+    #col1, col2 = st.columns(2)
+    #with col1:
+    fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols", color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Lufttemperatur je Jahr in Grad Celsius</b>")
+    fig.update_traces(marker_size=8)
+    st.plotly_chart(fig)
+    #with col2:
+    fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
                            color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
-        fig.update_traces(marker_size=8)
-        st.plotly_chart(fig)
+    fig.update_traces(marker_size=8)
+    st.plotly_chart(fig)
 
-    col3, col4 = st.columns(2)
-    with col3:
-        fig = px.scatter(df_selection, x="Jahr", y="abs. Min. Lufttemperatur", trendline="ols",
+    #col3, col4 = st.columns(2)
+    #with col3:
+    fig = px.scatter(df_selection, x="Jahr", y="abs. Min. Lufttemperatur", trendline="ols",
                            color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis, title="<b>minimal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
-        fig.update_traces(marker_size=8)
-        st.plotly_chart(fig)
-    with col4:
-        fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
+    fig.update_traces(marker_size=8)
+    st.plotly_chart(fig)
+    #with col4:
+    fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
                               color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
-        fig.update_traces(marker_size=8)
+    fig.update_traces(marker_size=8)
         st.plotly_chart(fig)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
