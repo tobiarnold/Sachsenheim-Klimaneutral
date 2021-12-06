@@ -103,7 +103,7 @@ def main():
                               color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
     fig.update_traces(marker_size=8)
-        st.plotly_chart(fig)
+    st.plotly_chart(fig)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
     st.markdown(link1, unsafe_allow_html=True)
