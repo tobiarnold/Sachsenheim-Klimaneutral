@@ -54,8 +54,8 @@ def main():
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     st.markdown("***")
-    image = Image.open("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg", width=200)
-    st.image(image)
+    image = Image.open("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg")
+    st.image(image, width=200)
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
              Eine überparteiliche Initiative, die erreichen möchte, dass Sachsenheim bis 2035 klimaneutral wird. 
              Wir haben diese Initiative im April 2021 ins Leben gerufen, weil wir davon überzeugt sind, dass große Veränderungen klein und lokal beginnen: 
