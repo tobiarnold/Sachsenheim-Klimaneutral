@@ -5,4 +5,4 @@ numpy ==1.21.4
 matplotlib ==3.5.0
 seaborn ==0.11.2
 statsmodels ==0.13.1
-from PIL import Image
+
