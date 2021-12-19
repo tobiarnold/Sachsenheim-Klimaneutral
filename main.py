@@ -62,7 +62,7 @@ def main():
              Eine überparteiliche Initiative, die erreichen möchte, dass Sachsenheim bis 2035 klimaneutral wird. 
              Wir haben diese Initiative im April 2021 ins Leben gerufen, weil wir davon überzeugt sind, dass große Veränderungen klein und lokal beginnen: 
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
-    st.markdown("##")
+    #st.markdown("##")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
              Deutschland anzeigen lassen, wählt dazu  **links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Achtung bei Zugriff mit mobilen Geräte ist der 
              Filter standardmäßig ausgeblendet. Der Filter lässt sich mit dem Pfeil oben links einblenden.**
