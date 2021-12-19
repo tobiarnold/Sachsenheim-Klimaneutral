@@ -56,7 +56,7 @@ def main():
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     st.markdown("***")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
-    image = Image.open("logo.jpg")
+    image = Image.open("logo.jpg", width=200)
     st.image(image)
     st.markdown("***")
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
