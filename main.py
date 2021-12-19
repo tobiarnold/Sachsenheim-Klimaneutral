@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.api as sm
+from PIL import Image
 
 def main():
     pd.set_option('display.max_colwidth', None)
@@ -53,7 +54,6 @@ def main():
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     st.markdown("***")
-    from PIL import Image
     image = Image.open("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg")
     st.image(image)
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
