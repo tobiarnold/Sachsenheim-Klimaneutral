@@ -54,7 +54,6 @@ def main():
     #print(df.head())
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
-    st.markdown("***")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
     image = Image.open("logo.jpg")
     st.image(image, width=200)
