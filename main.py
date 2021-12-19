@@ -54,7 +54,7 @@ def main():
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     st.markdown("***")
-    image = Image.open(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg")
+    image = Image.open(requests.get("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg", stream=True).raw)
     #st.image(image)
     st.markdown("***")
     st.write("""Hallo👋 Wir sind **sachsenheim.klimaneutral**!
