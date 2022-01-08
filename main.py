@@ -44,11 +44,11 @@ def main():
         df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
         "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
         "Max. Niederschlagshoehe Jahr"]].apply(pd.to_numeric, axis=1)
-   df=df.replace("-999", np.nan)
-   df = df.replace(-999.0000, np.nan)
-   df = df.replace(-999, np.nan)
-   df=df.round(2)
-   df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
+ df=df.replace("-999", np.nan)
+ df = df.replace(-999.0000, np.nan)
+ df = df.replace(-999, np.nan)
+ df=df.round(2)
+ df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
              "Jahressumme Niederschlagshöhe", "Max. Niederschlagshoehe Jahr","Jahresmittel Max. Lufttemperatur",
              "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
     #print(df.head())
