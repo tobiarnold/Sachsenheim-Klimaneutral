@@ -66,15 +66,14 @@ def main():
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
     #st.markdown("##")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
-             Deutschland anzeigen lassen, wählt dazu  **links einen Filter aus oder gebt direkt die Stadt nach der Ihr sucht ein. Achtung bei Zugriff mit mobilen Geräte ist der 
-             Filter standardmäßig ausgeblendet. Der Filter lässt sich mit dem Pfeil oben links einblenden.**
+             Deutschland anzeigen lassen, wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.
              Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Viel Spass 😀""")
     st.markdown("##")
    # st.dataframe(df_station)
    # st.dataframe(df)
    # print(df.dtypes)
-    st.sidebar.header("Hier filtern oder Suchwort eingeben")
-    wetterstation = st.sidebar.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =847)
+    st.header("Hier filtern oder Suchwort eingeben")
+    wetterstation = st.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =847)
     df_selection = df.query("Stationsname == @wetterstation")
     st.dataframe(df_selection.style.format({"Jahresmittel Lufttemperatur": "{:.2f}", "abs. Max. Lufttemperatur": "{:.2f}",
                                             "abs. Min. Lufttemperatur": "{:.2f}", "Jahressumme Niederschlagshöhe": "{:.1f}",
