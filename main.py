@@ -12,7 +12,7 @@ from PIL import Image
 def main():
     pd.set_option('display.max_colwidth', None)
     #df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file.txt",delimiter=";")
-    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_2.txt",delimiter=",")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_1.txt",delimiter=",")
     #df = df[df.STATIONS_ID != "STATIONS_ID"]
     #df_station = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/KL_Jahreswerte_Beschreibung_Stationen.txt",encoding='latin-1', delimiter=";")
     #df_station.columns = df_station.columns.str.strip()
