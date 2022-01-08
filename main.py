@@ -11,46 +11,47 @@ from PIL import Image
 
 def main():
     pd.set_option('display.max_colwidth', None)
-    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file.txt",delimiter=";")
-    df = df[df.STATIONS_ID != "STATIONS_ID"]
-    df_station = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/KL_Jahreswerte_Beschreibung_Stationen.txt",encoding='latin-1', delimiter=";")
-    df_station.columns = df_station.columns.str.strip()
-    df_station = df_station.rename(columns={"Stations_ID": "STATIONS_ID"})
-    df_station["STATIONS_ID"] = df_station["STATIONS_ID"].astype(int)
-    df["STATIONS_ID"] = df["STATIONS_ID"].astype(int)
-    df=pd.merge(df, df_station, on="STATIONS_ID", how="left")
-    df = df.drop(["MESS_DATUM_BEGINN", "QN_4", "QN_6", "eor"], axis=1)
-    df = df.rename(columns={"STATIONS_ID": "Stations_Id",
-                               "MESS_DATUM_ENDE": "Jahr", "JA_N": "Bedeckungsgrad",
-                               "JA_TT": "Jahresmittel Lufttemperatur",
-                               "JA_TX": "Jahresmittel Max. Lufttemperatur",
-                               "JA_TN": "Jahresmittel Min. Lufttemperatur",
-                               "JA_FK": "Windstärke", "JA_SD_S": "Sonnenscheindauer",
-                               "JA_MX_FX": "abs. Max. Windmaxspitze",
-                               "JA_MX_TX": "abs. Max. Lufttemperatur",
-                               "JA_MX_TN": "abs. Min. Lufttemperatur",
-                               "JA_RR": "Jahressumme Niederschlagshöhe",
-                               "JA_MX_RS": "Max. Niederschlagshoehe Jahr"})
-    df["Jahr"] = df["Jahr"].astype(str)
-    df["Jahr"] = df["Jahr"].str[:4]
-    df["Jahr"] = df["Jahr"].astype(int)
-    df.set_index("Jahr")
-    first_col = df.pop("Stationsname")
-    df.insert(0, "Stationsname", first_col)
-    df=df.sort_values(["Stationsname","Jahr"])
-    df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
-           "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
-           "Max. Niederschlagshoehe Jahr"]] = \
-           df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
-           "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
-           "Max. Niederschlagshoehe Jahr"]].apply(pd.to_numeric, axis=1)
-    df=df.replace("-999", np.nan)
-    df = df.replace(-999.0000, np.nan)
-    df = df.replace(-999, np.nan)
-    df=df.round(2)
-    df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
-             "Jahressumme Niederschlagshöhe", "Max. Niederschlagshoehe Jahr","Jahresmittel Max. Lufttemperatur",
-             "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
+    #df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file.txt",delimiter=";")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_2.txt",delimiter=";")
+    #df = df[df.STATIONS_ID != "STATIONS_ID"]
+    #df_station = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/KL_Jahreswerte_Beschreibung_Stationen.txt",encoding='latin-1', delimiter=";")
+    #df_station.columns = df_station.columns.str.strip()
+    #df_station = df_station.rename(columns={"Stations_ID": "STATIONS_ID"})
+    #df_station["STATIONS_ID"] = df_station["STATIONS_ID"].astype(int)
+    #df["STATIONS_ID"] = df["STATIONS_ID"].astype(int)
+    #df=pd.merge(df, df_station, on="STATIONS_ID", how="left")
+    #df = df.drop(["MESS_DATUM_BEGINN", "QN_4", "QN_6", "eor"], axis=1)
+    #df = df.rename(columns={"STATIONS_ID": "Stations_Id",
+     #                          "MESS_DATUM_ENDE": "Jahr", "JA_N": "Bedeckungsgrad",
+      #                         "JA_TT": "Jahresmittel Lufttemperatur",
+       #                        "JA_TX": "Jahresmittel Max. Lufttemperatur",
+        #                       "JA_TN": "Jahresmittel Min. Lufttemperatur",
+         #                      "JA_FK": "Windstärke", "JA_SD_S": "Sonnenscheindauer",
+          #                     "JA_MX_FX": "abs. Max. Windmaxspitze",
+           ##                    "JA_MX_TX": "abs. Max. Lufttemperatur",
+             #                  "JA_MX_TN": "abs. Min. Lufttemperatur",
+              #                 "JA_RR": "Jahressumme Niederschlagshöhe",
+               #                "JA_MX_RS": "Max. Niederschlagshoehe Jahr"})
+    #df["Jahr"] = df["Jahr"].astype(str)
+    #df["Jahr"] = df["Jahr"].str[:4]
+    #df["Jahr"] = df["Jahr"].astype(int)
+    #df.set_index("Jahr")
+    #first_col = df.pop("Stationsname")
+    #df.insert(0, "Stationsname", first_col)
+    #df=df.sort_values(["Stationsname","Jahr"])
+    #df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
+     #      "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
+      #     "Max. Niederschlagshoehe Jahr"]] = \
+       #    df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
+        #   "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
+         #  "Max. Niederschlagshoehe Jahr"]].apply(pd.to_numeric, axis=1)
+    #df=df.replace("-999", np.nan)
+    #df = df.replace(-999.0000, np.nan)
+    #df = df.replace(-999, np.nan)
+    #df=df.round(2)
+    #df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
+     #        "Jahressumme Niederschlagshöhe", "Max. Niederschlagshoehe Jahr","Jahresmittel Max. Lufttemperatur",
+      #       "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
     #print(df.head())
     #df = pd.read_pickle(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/df.pkl?raw=true")
     st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="wide")
