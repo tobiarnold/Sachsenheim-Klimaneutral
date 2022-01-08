@@ -31,24 +31,24 @@ def main():
                             "JA_MX_TN": "abs. Min. Lufttemperatur",
                             "JA_RR": "Jahressumme Niederschlagshöhe",
                             "JA_MX_RS": "Max. Niederschlagshoehe Jahr"})
-  df["Jahr"] = df["Jahr"].astype(str)
-  df["Jahr"] = df["Jahr"].str[:4]
-  df["Jahr"] = df["Jahr"].astype(int)
-  df.set_index("Jahr")
-  first_col = df.pop("Stationsname")
-  df.insert(0, "Stationsname", first_col)
-  df=df.sort_values(["Stationsname","Jahr"])
-  df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
+ df["Jahr"] = df["Jahr"].astype(str)
+ df["Jahr"] = df["Jahr"].str[:4]
+ df["Jahr"] = df["Jahr"].astype(int)
+ df.set_index("Jahr")
+ first_col = df.pop("Stationsname")
+ df.insert(0, "Stationsname", first_col)
+ df=df.sort_values(["Stationsname","Jahr"])
+ df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
         "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
         "Max. Niederschlagshoehe Jahr"]] = \
         df[["Bedeckungsgrad", "Jahresmittel Lufttemperatur", "Jahresmittel Max. Lufttemperatur", "Jahresmittel Min. Lufttemperatur",
         "Sonnenscheindauer", "abs. Max. Windmaxspitze", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur", "Jahressumme Niederschlagshöhe",
         "Max. Niederschlagshoehe Jahr"]].apply(pd.to_numeric, axis=1)
-    df=df.replace("-999", np.nan)
-    df = df.replace(-999.0000, np.nan)
-    df = df.replace(-999, np.nan)
-    df=df.round(2)
-    df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
+   df=df.replace("-999", np.nan)
+   df = df.replace(-999.0000, np.nan)
+   df = df.replace(-999, np.nan)
+   df=df.round(2)
+   df = df[["Stationsname", "Stations_Id", "Jahr", "Jahresmittel Lufttemperatur", "abs. Max. Lufttemperatur", "abs. Min. Lufttemperatur",
              "Jahressumme Niederschlagshöhe", "Max. Niederschlagshoehe Jahr","Jahresmittel Max. Lufttemperatur",
              "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
     #print(df.head())
