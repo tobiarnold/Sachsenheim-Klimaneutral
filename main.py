@@ -119,15 +119,18 @@ def main():
     st.write("Wir würden uns freuen, wenn Ihr unserem Insta Profil folgt und ein Like dalasst.  \n💚💚💚")
     st.markdown("***")
     #heatmap
-    df_neu = df_selection.pivot("Jahr", "Stations_Id", "Jahresmittel Lufttemperatur")
-    df_neu = df_neu.transpose()
-    f, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 3))
-    ax = sns.heatmap(df_neu, cmap="coolwarm")
-    st.title("Warming Stripes")
-    st.write("Die Warming Stripes zeigen die Veränderungen der Durchschnittstemperaturen für die verschiedenen Jahre auf,  \n"
-        "wobei blau für eher kalte und rot für eher warme Jahre steht.")
-    st.markdown("##")
-    st.write(f)
+    try:
+        df_neu = df_selection.pivot("Jahr", "Stations_Id", "Jahresmittel Lufttemperatur")
+        df_neu = df_neu.transpose()
+        f, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 3))
+        ax = sns.heatmap(df_neu, cmap="coolwarm")
+        st.title("Warming Stripes")
+        st.write("Die Warming Stripes zeigen die Veränderungen der Durchschnittstemperaturen für die verschiedenen Jahre auf,  \n"
+            "wobei blau für eher kalte und rot für eher warme Jahre steht.")
+        st.markdown("##")
+        st.write(f)
+    except:
+        print("Keine Daten zum Anzeigen")
     st.markdown("***")
     st.text("created with Python by Tobias Arnold, Quelle: Deutscher Wetterdienst")
         
