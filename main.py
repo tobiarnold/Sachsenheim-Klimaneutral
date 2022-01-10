@@ -130,7 +130,7 @@ def main():
         st.markdown("##")
         st.write(f)
     except:
-        print("Keine Daten zum Anzeigen")
+        st.write("Keine Daten zum Anzeigen")
     st.markdown("***")
     st.text("created with Python by Tobias Arnold, Quelle: Deutscher Wetterdienst")
         
