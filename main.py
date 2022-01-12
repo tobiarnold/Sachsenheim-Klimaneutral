@@ -93,13 +93,13 @@ def main():
     fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols", color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Lufttemperatur je Jahr in Grad Celsius</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
     #with col2:
     fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
                            color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
 
     #col3, col4 = st.columns(2)
     #with col3:
@@ -107,14 +107,14 @@ def main():
                            color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis, title="<b>minimal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
     #with col4:
     fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
                               color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
     st.markdown(link1, unsafe_allow_html=True)
