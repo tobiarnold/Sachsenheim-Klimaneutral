@@ -98,6 +98,7 @@ def main():
     fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
                            color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
     fig.update_traces(marker_size=8)
+    fig.update_layout(coloraxis_colorbar_x=0.95)
     st.plotly_chart(fig)
 
     #col3, col4 = st.columns(2)
