@@ -119,7 +119,7 @@ def main():
                               color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=50))
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=50),width=600,height=500)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=False)
