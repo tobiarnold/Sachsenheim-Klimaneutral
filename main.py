@@ -109,7 +109,7 @@ def main():
                            color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis, title="<b>minimal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-     fig.update_layout(coloraxis_colorbar=dict(title="Temperatur"))
+    fig.update_layout(coloraxis_colorbar=dict(title="Temperatur"))
     st.plotly_chart(fig, use_container_width=False)
     #with col4:
     fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
@@ -117,7 +117,7 @@ def main():
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
-     fig.update_layout(coloraxis_colorbar=dict(title="Niederschlagshöhe"))
+    fig.update_layout(coloraxis_colorbar=dict(title="Niederschlagshöhe"))
     st.plotly_chart(fig, use_container_width=False)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
