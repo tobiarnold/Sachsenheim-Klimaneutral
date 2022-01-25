@@ -94,6 +94,8 @@ def main():
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
     fig.update_layout(coloraxis_colorbar=dict(title="Temperatur"))
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=False)
     #with col2:
     fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
@@ -101,6 +103,8 @@ def main():
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
     fig.update_layout(coloraxis_colorbar=dict(title="Temperatur"))
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=False)
 
     #col3, col4 = st.columns(2)
@@ -110,6 +114,8 @@ def main():
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
     fig.update_layout(coloraxis_colorbar=dict(title="Temperatur"))
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=False)
     #with col4:
     fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
@@ -118,6 +124,8 @@ def main():
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95)
     fig.update_layout(coloraxis_colorbar=dict(title="Niederschlagshöhe"))
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=False)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
