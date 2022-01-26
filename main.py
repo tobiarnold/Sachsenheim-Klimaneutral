@@ -110,7 +110,7 @@ def main():
     fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=500)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
-    st.plotly_chart(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
 
     #col3, col4 = st.columns(2)
     #with col3:
@@ -120,7 +120,7 @@ def main():
     fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=500)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
-    st.plotly_chart(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
     #with col4:
     fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
                               color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
@@ -129,7 +129,7 @@ def main():
     fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=80),width=600,height=500)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
-    st.plotly_chart(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
         
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
     st.markdown(link1, unsafe_allow_html=True)
