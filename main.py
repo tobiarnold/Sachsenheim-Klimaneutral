@@ -100,7 +100,7 @@ def main():
     fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols", color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Temperatur in Grad Celsius</b>")
     config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
@@ -109,7 +109,7 @@ def main():
                            color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximale Temperatur in Grad Celsius</b>")
     config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
@@ -120,7 +120,7 @@ def main():
                            color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis, title="<b>minimale Temperatur in Grad Celsius</b>")
     config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
@@ -130,7 +130,7 @@ def main():
                               title="<b>Jahressumme Niederschlagshöhe in mm</b>")
     config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=80),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=60),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
