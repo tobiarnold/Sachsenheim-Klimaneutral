@@ -76,7 +76,14 @@ def main():
     st.markdown("##### Hier filtern oder Suchwort eingeben:")
     wetterstation = st.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =847)
     df_selection = df.query("Stationsname == @wetterstation")
-    st.dataframe(df_selection.style.format({"Jahresmittel Lufttemperatur": "{:.2f}", "abs. Max. Lufttemperatur": "{:.2f}",
+    st.markdown("##### Hier Datentabelle ein- oder ausblenden:")
+    tabelle = st.radio(
+        "Datentabelle ein- oder ausblenden",
+        ("Ausblenden","Einblenden"))
+    if tabelle == "Ausblenden":
+        st.write("Datentabelle ist ausgeblendet.")
+    else:
+        st.dataframe(df_selection.style.format({"Jahresmittel Lufttemperatur": "{:.2f}", "abs. Max. Lufttemperatur": "{:.2f}",
                                             "abs. Min. Lufttemperatur": "{:.2f}", "Jahressumme Niederschlagshöhe": "{:.1f}",
                                             "Max. Niederschlagshoehe Jahr": "{:.1f}", "Jahresmittel Max. Lufttemperatur": "{:.2f}",
                                             "Jahresmittel Min. Lufttemperatur": "{:.2f}", "Sonnenscheindauer": "{:.1f}",
