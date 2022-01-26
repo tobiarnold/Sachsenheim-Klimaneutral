@@ -67,7 +67,7 @@ def main():
     #st.markdown("##")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
              Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.
-             **Wir empfehlen euch allerdings für eine übersichtlichere Darstellung den Zugriff mit Laptop oder Desktop-PC**. Beachte, dass Umlaute wie ä, ö und ü sowie ß im Filter als ae, oe, ue bzw. ss geschrieben werden.""")
+             Beachte, dass Umlaute wie ä, ö und ü sowie ß im Filter als ae, oe, ue bzw. ss geschrieben werden.""")
     st.write("Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2020. Viel Spass 😀")
    # st.markdown("##")
    # st.dataframe(df_station)
