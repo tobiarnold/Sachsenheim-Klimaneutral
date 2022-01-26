@@ -106,11 +106,12 @@ def main():
     #with col2:
     fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
                            color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximal gemessene Lufttemperatur je Jahr in Grad Celsius</b>")
+    config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
     fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=80),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=config)
 
     #col3, col4 = st.columns(2)
     #with col3:
