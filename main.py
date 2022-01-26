@@ -100,7 +100,7 @@ def main():
     fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols", color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Temperatur in Grad Celsius</b>")
     config ={"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60, b=50),width=600,height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
