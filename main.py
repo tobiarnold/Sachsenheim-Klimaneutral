@@ -54,7 +54,7 @@ def main():
       #       "Jahresmittel Min. Lufttemperatur" , "Sonnenscheindauer", "Windstärke", "abs. Max. Windmaxspitze", "Bedeckungsgrad"]]
     #print(df.head())
     #df = pd.read_pickle(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/df.pkl?raw=true")
-    st.set_page_config(page_title="Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="centered")
+    st.set_page_config(page_title="historische Wetterdaten des Deutschen Wetterdienstes", page_icon=":green_heart:", layout="centered")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
     image = Image.open("logo.jpg")
