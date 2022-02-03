@@ -55,7 +55,7 @@ def main():
     #print(df.head())
     #df = pd.read_pickle(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/df.pkl?raw=true")
     st.set_page_config(page_title="Wetterdaten DWD", page_icon=":green_heart:", layout="centered")
-    st.title("Wetterdaten des Deutschen Wetterdienstes")
+    st.title("Wetterdaten des Deutschen Wetterdienst")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
     image = Image.open("logo.jpg")
     st.image(image, width=100)
