@@ -55,7 +55,7 @@ def main():
     #print(df.head())
     #df = pd.read_pickle(r"https://github.com/tobiarnold/Sachsenheim-Klimaneutral/blob/main/df.pkl?raw=true")
     st.set_page_config(page_title="Wetterdaten DWD", page_icon=":green_heart:", layout="centered")
-    st.title("historische Wetterdaten des DWD")
+    st.title("Wetterdaten des Deutschen Wetterdienstes")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
     image = Image.open("logo.jpg")
     st.image(image, width=100)
@@ -65,7 +65,7 @@ def main():
              Wir haben diese Initiative im April 2021 ins Leben gerufen, weil wir davon überzeugt sind, dass große Veränderungen klein und lokal beginnen: 
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
     #st.markdown("##")
-    st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen (historischen) Daten der Wetterstationen des Deutschen Wetterdienstes in 
+    st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen **historischen Daten der Wetterstationen des Deutschen Wetterdienstes** in 
              Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.
              Beachte, dass Umlaute wie ä, ö und ü sowie ß im Filter als ae, oe, ue bzw. ss geschrieben werden.""")
     st.write("Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2020. Viel Spass 😀")
