@@ -67,9 +67,8 @@ def main():
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
     #st.markdown("##")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen **historischen Daten der Wetterstationen des Deutschen Wetterdienstes** in 
-             Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.
-             Beachte, dass Umlaute wie ä, ö und ü sowie ß im Filter als ae, oe, ue bzw. ss geschrieben werden.""")
-    st.write("Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2020. Viel Spass 😀")
+             Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.")
+    st.write("Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2021. Viel Spass 😀")
    # st.markdown("##")
    # st.dataframe(df_station)
    # st.dataframe(df)
