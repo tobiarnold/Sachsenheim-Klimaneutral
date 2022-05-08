@@ -74,7 +74,7 @@ def main():
    # st.dataframe(df)
    # print(df.dtypes)
     st.markdown("##### Hier filtern oder Suchwort eingeben:")
-    wetterstation = st.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =856)
+    wetterstation = st.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =857)
     df_selection = df.query("Stationsname == @wetterstation")
     st.markdown("##### Hier Datentabelle ein- oder ausblenden:")
     tabelle = st.radio(
