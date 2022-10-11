@@ -9,7 +9,6 @@ import urllib.request
 from PIL import Image
 
 def main():
-    pd.set_option('display.max_colwidth', None)
     df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file_neu",delimiter=",")
     st.set_page_config(page_title="Wetterdaten DWD", page_icon=":green_heart:", layout="centered")
     st.title("Wetterdaten des Deutschen Wetterdienstes")
