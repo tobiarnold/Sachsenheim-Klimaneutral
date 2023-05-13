@@ -51,7 +51,7 @@ def main():
     st.title(":bar_chart: Daten der Wetterstation")
     st.markdown("##")
     st.write("Die folgenden Diagramme zeigen jeweils die Veränderungen der Temperaturen für die verschiedenen Jahre sowie die Veränderung der Niederschläge.")
-    st.write("Die Punkte bei den Diagrammen stellen jeweils die Messwerte in den verschieden Jahren dar, die rote Linie zeigt den Trend auf.")
+    st.write("Die Punkte bei den Diagrammen stellen jeweils die Messwerte in den verschieden Jahren dar, die rote bzw. blaue Linie zeigt den Trend auf.")
     fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols",
                      color="Jahresmittel Lufttemperatur",color_continuous_scale=px.colors.sequential.Agsunset,
                      title="<b>durchschnittliche Temperatur in Grad Celsius</b>", trendline_color_override="red")
