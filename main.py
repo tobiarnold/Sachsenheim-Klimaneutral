@@ -41,41 +41,49 @@ def main():
     st.markdown("##")
     st.write("Die folgenden Diagramme zeigen jeweils die Veränderungen der Temperaturen für die verschiedenen Jahre sowie die Veränderung der Niederschläge.")
     st.write("Die Punkte bei den Diagrammen stellen jeweils die Messwerte in den verschieden Jahren dar, die rote Linie zeigt den Trend auf.")
-    fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols", color="Jahresmittel Lufttemperatur", title="<b>durchschnittliche Temperatur in Grad Celsius</b>")
-    config ={"displayModeBar": False}
+    fig = px.scatter(df_selection, x="Jahr", y="Jahresmittel Lufttemperatur", trendline="ols",
+                     color="Jahresmittel Lufttemperatur",color_continuous_scale=px.colors.sequential.Agsunset,
+                     title="<b>durchschnittliche Temperatur in Grad Celsius</b>", trendline_color_override="red")
+    config = {"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60, b=50),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),
+                      margin=dict(l=0, r=0, t=60, b=50), width=600, height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
     fig = px.scatter(df_selection, x="Jahr", y="abs. Max. Lufttemperatur", trendline="ols",
-                           color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r, title="<b>maximale Temperatur in Grad Celsius</b>")
-    config ={"displayModeBar": False}
+                     color="abs. Max. Lufttemperatur", color_continuous_scale=px.colors.sequential.Hot_r,
+                     title="<b>maximale Temperatur in Grad Celsius</b>",trendline_color_override="red")
+    config = {"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60, b=50),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),
+                      margin=dict(l=0, r=0, t=60, b=50), width=600, height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
-    fig = px.scatter(df_selection, x="Jahr", y="abs. Min. Lufttemperatur", trendline="ols",
-                           color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis, title="<b>minimale Temperatur in Grad Celsius</b>")
-    config ={"displayModeBar": False}
+    fig = px.scatter(df_selection, x="Jahr", y="abs. Min. Lufttemperatur", trendline="ols", trendline_color_override="blue",
+                     color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.ice,
+                     title="<b>minimale Temperatur in Grad Celsius</b>")
+    config = {"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),margin=dict(l=0, r=0, t=60, b=50),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Temperatur"),
+                      margin=dict(l=0, r=0, t=60, b=50), width=600, height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
-    fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols",
-                              color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
-                              title="<b>Jahressumme Niederschlagshöhe in mm</b>")
-    config ={"displayModeBar": False}
+    fig = px.scatter(df_selection, x="Jahr", y="Jahressumme Niederschlagshöhe", trendline="ols", trendline_color_override="blue",
+                     color="Jahressumme Niederschlagshöhe", color_continuous_scale=px.colors.sequential.Blues,
+                     title="<b>Jahressumme Niederschlagshöhe in mm</b>")
+    config = {"displayModeBar": False}
     fig.update_traces(marker_size=8)
-    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),margin=dict(l=0, r=0, t=60, b=50),width=600,height=450)
+    fig.update_layout(coloraxis_colorbar_x=0.95, coloraxis_colorbar=dict(title="Niederschlagshöhe"),
+                      margin=dict(l=0, r=0, t=60, b=50), width=600, height=450)
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
     link1 = "[Sachsenheim Klimaneutral](https://sachsenheim-klimaneutral.de/)"
     st.markdown(link1, unsafe_allow_html=True)
-    link2="[Instagram sachsenheim.klimaneutral](https://www.instagram.com/sachsenheim.klimaneutral/)"
+    link2 = "[Instagram sachsenheim.klimaneutral](https://www.instagram.com/sachsenheim.klimaneutral/)"
     st.markdown(link2, unsafe_allow_html=True)
     st.write("Wir würden uns freuen, wenn Ihr unserem Insta Profil folgt und ein Like dalasst.  \n💚💚💚")
     st.markdown("***")
@@ -85,7 +93,8 @@ def main():
         f, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 3))
         ax = sns.heatmap(df_neu, cmap="coolwarm")
         st.title("Warming Stripes")
-        st.write("Die Warming Stripes zeigen die Veränderungen der Durchschnittstemperaturen für die verschiedenen Jahre auf, wobei blau für eher kalte und rot für eher warme Jahre steht.")
+        st.write(
+            "Die Warming Stripes zeigen die Veränderungen der Durchschnittstemperaturen für die verschiedenen Jahre auf, wobei blau für eher kalte und rot für eher warme Jahre steht.")
         st.markdown("##")
         st.write(f)
     except:
