@@ -31,8 +31,8 @@ def main():
              Wir haben diese Initiative im April 2021 ins Leben gerufen, weil wir davon überzeugt sind, dass große Veränderungen klein und lokal beginnen: 
              Nur gemeinsam können wir der Politik signalisieren, dass das Jahrhundertproblem Klimawandel mutiger angegangen werden kann und muss.""")
     st.write("""Auf dieser von uns erstellten Seite könnt Ihr euch die verschiedenen **historischen Daten der Wetterstationen des Deutschen Wetterdienstes** in 
-             Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der Ihr sucht ein. Aufgrund des vermehrten Zugriffs von mobilen Geräten haben wir den Filter jetzt standardmäßig mittig platziert.""")
-    st.write("Insgesamt stehen mehr als 1.100 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2022. Viel Spass 😀")
+             Deutschland anzeigen lassen. Wählt oder gebt dazu direkt die Stadt nach der ihr sucht ein.""")
+    st.write("Insgesamt stehen mehr als 1.000 Stationen zur Verfügung. Die Daten reichen je nach Wetterstation von 1781 bis 2022. Viel Spass 😀")
     st.markdown("##### Hier filtern oder Suchwort eingeben:")
     wetterstation = st.selectbox("Wetterstation auswählen", options=df["Stationsname"].unique(), index =864)
     df_selection = df.query("Stationsname == @wetterstation")
