@@ -11,7 +11,7 @@ from PIL import Image
 def main():
     df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/output_file_neu",delimiter=",")
     st.set_page_config(page_title="Wetterdaten DWD", page_icon=":green_heart:", layout="centered")
-     hide_streamlit_style = """
+    hide_streamlit_style = """
                  <style>
                   div.block-container{padding-top:2rem;}
                    div[data-testid="stToolbar"] {
@@ -21,6 +21,7 @@ def main():
                     }
                  </style>
                  """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
     st.title("Wetterdaten des Deutschen Wetterdienstes")
     urllib.request.urlretrieve("https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/Sachsenheim-S6.jpg","logo.jpg")
     image = Image.open("logo.jpg")
