@@ -73,7 +73,7 @@ def main():
     fig.update_yaxes(fixedrange=True)
     st.plotly_chart(fig, use_container_width=True, config=config)
     fig = px.scatter(df_selection, x="Jahr", y="abs. Min. Lufttemperatur", trendline="ols", trendline_color_override="blue",
-                     color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.ice,
+                     color="abs. Min. Lufttemperatur", color_continuous_scale=px.colors.sequential.Viridis,
                      title="<b>minimale Temperatur in Grad Celsius</b>")
     config = {"displayModeBar": False}
     fig.update_traces(marker_size=8)
