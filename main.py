@@ -112,6 +112,8 @@ def main():
         st.write("Daten können nicht angezeigt werden")
     st.markdown("***")
     st.text("created with Python by Tobias Arnold, Quelle: Deutscher Wetterdienst")
+    link3 = "[Historische Wetterdaten](https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/annual/kl/historical/)"
+    st.markdown(link3, unsafe_allow_html=True)
         
 if __name__ == "__main__":
   main()
