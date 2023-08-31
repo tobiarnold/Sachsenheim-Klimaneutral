@@ -99,7 +99,7 @@ def main():
     st.write("Wir würden uns freuen, wenn Ihr unserem Insta Profil folgt und ein Like dalasst.  \n💚💚💚")
     st.markdown("***")
     try:
-        df_neu = df_selection.pivot("Jahr", "Stations_Id", "Jahresmittel Lufttemperatur")
+        df_neu = df_selection.pivot(index="Jahr",columns= "Stations_Id", values="Jahresmittel Lufttemperatur")
         df_neu = df_neu.transpose()
         f, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 3))
         ax = sns.heatmap(df_neu, cmap="coolwarm")
