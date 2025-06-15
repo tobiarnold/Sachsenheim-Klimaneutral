@@ -9,7 +9,7 @@ import urllib.request
 from PIL import Image
 
 def main():
-    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/df.csv",sep="|")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/Sachsenheim-Klimaneutral/main/df.csv",sep=",")
     st.set_page_config(page_title="Wetterdaten DWD", page_icon=":green_heart:", layout="centered")
     hide_streamlit_style = """
                  <style>
